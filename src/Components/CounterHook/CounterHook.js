@@ -51,7 +51,7 @@ export default function CounterHook() {
           Bad
         </button>
       </div>
-
+      <p className={s.message}>No feedback given</p>
       <ul className={s.List}>
         <li className={s.TitleList}>Good: {good}</li>
         <li className={s.TitleList}>Neutral: {neutral}</li>

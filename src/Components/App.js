@@ -45,33 +45,35 @@ export class App extends Component {
     const { good, neutral, bad } = this.state;
 
     return (
-      <div className={s.container}>
-        <Section title={"Please leave feedback"}>
-          <FeedbackOptions
-            options={["good", "neutral", "bad"]}
-            onLeaveFeedback={this.handelBtnClick}
-          />
-        </Section>
-
-        <Section title={"Statistics"}>
-          {this.visibleStatistics === true ? (
-            <Statistics
-              good={good}
-              neutral={neutral}
-              bad={bad}
-              total={this.countTotalFeedback(good, neutral, bad)}
-              positivePercentage={this.countPositiveFeedbackPercentage(
-                good,
-                neutral,
-                bad
-              )}
+      <>
+        <div className={s.container}>
+          <Section title={"Please leave feedback"}>
+            <FeedbackOptions
+              options={["good", "neutral", "bad"]}
+              onLeaveFeedback={this.handelBtnClick}
             />
-          ) : (
-            <Notification message={"No feedback given"} />
-          )}
-        </Section>
+          </Section>
+
+          <Section title={"Statistics"}>
+            {this.visibleStatistics === true ? (
+              <Statistics
+                good={good}
+                neutral={neutral}
+                bad={bad}
+                total={this.countTotalFeedback(good, neutral, bad)}
+                positivePercentage={this.countPositiveFeedbackPercentage(
+                  good,
+                  neutral,
+                  bad
+                )}
+              />
+            ) : (
+              <Notification message={"No feedback given"} />
+            )}
+          </Section>
+        </div>
         <CounterHook />
-      </div>
+      </>
     );
   }
 }

@@ -1,8 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 import CounterHook from "./CounterHook/CounterHook";
 
-export class App extends Component {
-  render() {
-    return <CounterHook />;
-  }
-}
+const App = () => <CounterHook />;
+
+export default App;

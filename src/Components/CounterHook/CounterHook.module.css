@@ -37,11 +37,15 @@
 }
 
 .TitleList {
-  margin-bottom: 15px;
-  padding: 2px;
+  /* margin-bottom: 15px; */
+  padding: 10px;
   text-align: center;
-  background-color: rgba(46, 67, 68, 0.432);
+  background-color: rgba(46, 67, 68, 0.123);
   border-radius: 3px;
+}
+
+.TitleList:not(:last-child) {
+  border-bottom: 1px solid rgb(13, 54, 59);
 }
 
 .TitleList p {

@@ -60,7 +60,7 @@ export default function CounterHook() {
           <li className={s.TitleList}>Bad: {bad}</li>
           <li className={s.TitleList}>Total: {total}</li>
           <li className={s.TitleList}>
-            Positive percentage: {positivePercentage} %
+            Positive feedback: {positivePercentage} %
           </li>
         </ul>
       )}

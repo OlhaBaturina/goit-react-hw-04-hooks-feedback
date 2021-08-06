@@ -51,16 +51,19 @@ export default function CounterHook() {
           Bad
         </button>
       </div>
-      <p className={s.message}>No feedback given</p>
-      <ul className={s.List}>
-        <li className={s.TitleList}>Good: {good}</li>
-        <li className={s.TitleList}>Neutral: {neutral}</li>
-        <li className={s.TitleList}>Bad: {bad}</li>
-        <li className={s.TitleList}>Total: {total}</li>
-        <li className={s.TitleList}>
-          Positive percentage: {positivePercentage} %
-        </li>
-      </ul>
+      {total === 0 ? (
+        <p className={s.message}>No feedback given</p>
+      ) : (
+        <ul className={s.List}>
+          <li className={s.TitleList}>Good: {good}</li>
+          <li className={s.TitleList}>Neutral: {neutral}</li>
+          <li className={s.TitleList}>Bad: {bad}</li>
+          <li className={s.TitleList}>Total: {total}</li>
+          <li className={s.TitleList}>
+            Positive percentage: {positivePercentage} %
+          </li>
+        </ul>
+      )}
     </div>
   );
 }

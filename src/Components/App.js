@@ -1,9 +1,10 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import s from "./App.module.css";
 import { Section } from "./Section/Section";
 import { Statistics } from "./Statistics/Statistics";
 import { FeedbackOptions } from "./FeedbackOptions/FeedbackOptions";
 import { Notification } from "./Notification/Notification";
+import CounterHook from "./CounterHook/CounterHook";
 
 export class App extends Component {
   static defaultProps = {
@@ -69,6 +70,7 @@ export class App extends Component {
             <Notification message={"No feedback given"} />
           )}
         </Section>
+        <CounterHook />
       </div>
     );
   }

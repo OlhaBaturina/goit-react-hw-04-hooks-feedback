@@ -6,35 +6,3 @@
   border: 1px solid rgba(42, 112, 97, 0.253);
   border-radius: 2px;
 }
-.button:hover {
-  transform: scale(1.1);
-}
-
-.TitleList {
-  /* margin-bottom: 15px; */
-  padding: 10px;
-  text-align: center;
-  background-color: rgba(46, 67, 68, 0.123);
-  border-radius: 3px;
-}
-
-.TitleList:not(:last-child) {
-  border-bottom: 1px solid rgb(13, 54, 59);
-}
-
-.TitleList p {
-  margin: 5px;
-  padding: 0;
-}
-
-.List {
-  list-style: none;
-  margin: 10;
-  padding: 0;
-}
-
-.message {
-  margin: 40px auto;
-  font-size: 20px;
-  color: rgba(255, 0, 140, 0.527);
-}

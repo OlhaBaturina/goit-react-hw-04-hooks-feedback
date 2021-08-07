@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import s from "./App.module.css";
 import { FeedbackOptions } from "./FeedbackOptions/FeedbackOptions";
 import { Notification } from "./Notification/Notification";
+import { Statistics } from "./Statistics/Statistics";
 
 export default function App() {
   const [good, setGood] = useState(0);
@@ -9,6 +10,8 @@ export default function App() {
   const [bad, setBad] = useState(0);
   const [total, setTotal] = useState(1);
   const [positivePercentage, setPositivePercentage] = useState(0);
+
+  const feedbackValue = ["Good", "Neutral", "Bad"];
 
   const handleStateIncrement = (e) => {
     const value = e.target.textContent.toLowerCase();
@@ -41,21 +44,19 @@ export default function App() {
       <h2 className={s.mainTitle}>Please leave feedback</h2>
       <FeedbackOptions
         increment={handleStateIncrement}
-        feedback={["Good", "Neutral", "Bad"]}
+        feedback={feedbackValue}
       />
 
       {total === 0 ? (
         <Notification message={"No feedback given"} />
       ) : (
-        <ul className={s.List}>
-          <li className={s.TitleList}>Good: {good}</li>
-          <li className={s.TitleList}>Neutral: {neutral}</li>
-          <li className={s.TitleList}>Bad: {bad}</li>
-          <li className={s.TitleList}>Total: {total}</li>
-          <li className={s.TitleList}>
-            Positive feedback: {positivePercentage} %
-          </li>
-        </ul>
+        <Statistics
+          Good={good}
+          Neutral={neutral}
+          Bad={bad}
+          Total={total}
+          Positive={positivePercentage}
+        />
       )}
     </div>
   );

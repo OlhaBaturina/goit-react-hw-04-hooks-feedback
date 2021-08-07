@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import s from "./App.module.css";
 import { FeedbackOptions } from "./FeedbackOptions/FeedbackOptions";
+import { Notification } from "./Notification/Notification";
 
 export default function App() {
   const [good, setGood] = useState(0);
@@ -44,7 +45,7 @@ export default function App() {
       />
 
       {total === 0 ? (
-        <p className={s.message}>No feedback given</p>
+        <Notification message={"No feedback given"} />
       ) : (
         <ul className={s.List}>
           <li className={s.TitleList}>Good: {good}</li>

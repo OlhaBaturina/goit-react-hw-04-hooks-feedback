@@ -3,6 +3,7 @@ import s from "./App.module.css";
 import { FeedbackOptions } from "./FeedbackOptions/FeedbackOptions";
 import { Notification } from "./Notification/Notification";
 import { Statistics } from "./Statistics/Statistics";
+import { Section } from "./Section/Section";
 
 export default function App() {
   const [good, setGood] = useState(0);
@@ -41,23 +42,26 @@ export default function App() {
 
   return (
     <div className={s.container}>
-      <h2 className={s.mainTitle}>Please leave feedback</h2>
-      <FeedbackOptions
-        increment={handleStateIncrement}
-        feedback={feedbackValue}
-      />
-
-      {total === 0 ? (
-        <Notification message={"No feedback given"} />
-      ) : (
-        <Statistics
-          Good={good}
-          Neutral={neutral}
-          Bad={bad}
-          Total={total}
-          Positive={positivePercentage}
+      <Section title={"Please leave feedback"}>
+        <FeedbackOptions
+          increment={handleStateIncrement}
+          feedback={feedbackValue}
         />
-      )}
+      </Section>
+
+      <Section title={"Statistics"}>
+        {total === 0 ? (
+          <Notification message={"No feedback given"} />
+        ) : (
+          <Statistics
+            Good={good}
+            Neutral={neutral}
+            Bad={bad}
+            Total={total}
+            Positive={positivePercentage}
+          />
+        )}
+      </Section>
     </div>
   );
 }
